@@ -1,16 +1,23 @@
+import UserProfile from "./UserProfile";
+
 function App() {
-  // CORRECT - Wrapped in a div
-  const userInfo = () => {
-    return (
-      <React.Fragment>
-        {/* This is a comment */}
-        <h1>User Name</h1>
-        <p>User Bio</p>
-      </React.Fragment>
-    );
+  const user1 = {
+    firstName: "Alice",
+    lastName: "Wonder",
+    avatarUrl: "https://placehold.co/80x80/a9dff7/333?text=AW",
+    email: "alice@example.com",
   };
 
-  return userInfo();
+  return (
+    <div className="App">
+      <UserProfile
+        firstName={user1.firstName}
+        lastName={user1.lastName}
+        avatarUrl={user1.avatarUrl}
+        email={user1.email}
+      />
+    </div>
+  );
 }
 
 export default App;
