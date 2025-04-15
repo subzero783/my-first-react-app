@@ -1,27 +1,24 @@
+import Card from "./Card";
 import UserProfile from "./UserProfile";
-import Greeting from "./Greeting";
-import GreetingClass from "./GreetingClass";
-
 function App() {
-  const user1 = {
-    firstName: "Gustavo",
-    lastName: "Wonder",
-    avatarUrl: "https://placehold.co/80x80/a9dff7/333?text=AW",
-    email: "alice@example.com",
-  };
-
   return (
-    <div className="App">
-      {/* <UserProfile
-        firstName={user1.firstName}
-        lastName={user1.lastName}
-        avatarUrl={user1.avatarUrl}
-        email={user1.email}
-      /> */}
-      <Greeting name={user1.firstName} />
-      <GreetingClass name={user1.firstName} />
+    <div>
+      <Card title="User Information">
+        {/* Everything between <Card> and </Card> is props.children */}
+        <p>This user likes React!</p>
+        <UserProfile
+          name="Jordan"
+          email="jordan@react.dev"
+          age={25}
+        />
+        <button>Contact User</button>
+        {/* End of props.children */}
+      </Card>
+
+      <Card title="Another Section">
+        <p style={{ color: "red" }}>Some other content here.</p>
+      </Card>
     </div>
   );
 }
-
 export default App;
